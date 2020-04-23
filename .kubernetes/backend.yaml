@@ -42,7 +42,7 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "microblog-backend-service"
+  name: "microblog-backend"
   labels:
     app: "microblog-backend"
 spec:
@@ -67,5 +67,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: microblog-backend-service
+          serviceName: microblog-backend
           servicePort: 80
