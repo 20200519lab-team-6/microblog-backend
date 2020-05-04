@@ -14,11 +14,11 @@ services:
     build: .
     command: gunicorn config.wsgi -b 0.0.0.0:8000
     environment:
-      DB_NAME: api
-      DB_USER: postgres
-      DB_PASS: supersecurepassword
-      DB_HOST: db
-      DB_PORT: 5432
+      POSTGRES_DB: api
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: supersecurepassword
+      POSTGRES_SERVICE: db
+      POSTGRES_PORT: 5432
     ports:
       - 8000:8000
     volumes:

@@ -19,24 +19,24 @@ spec:
       - name: "microblog-backend"
         image: REPLACE_IMAGE
         env:
-          - name: DB_USER
+          - name: POSTGRES_USER
             valueFrom:
               secretKeyRef:
                 name: postgres
                 key: username
-          - name: DB_PASS
+          - name: POSTGRES_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: postgres
                 key: password
-          - name: DB_NAME
+          - name: POSTGRES_DB
             valueFrom:
               secretKeyRef:
                 name: postgres
                 key: db
-          - name: DB_HOST
+          - name: POSTGRES_SERVICE
             value: postgresdb-service
-          - name: DB_PORT
+          - name: POSTGRES_PORT
             value: "5432"
 ---
 apiVersion: "v1"
